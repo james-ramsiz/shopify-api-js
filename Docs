@@ -1,0 +1,19 @@
+mutation {
+  draftOrderCreate(input: {
+    lineItems: [{ variantId: "gid://shopify/ProductVariant/1234567890", quantity: 1 }]
+    email: "customer@example.com"
+    shippingAddress: {
+      address1: "123 Main St"
+      city: "New York"
+      country: "USA"
+    }
+  }) {
+    draftOrder {
+      id
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
